@@ -10,7 +10,7 @@ struct Pet {
     std::string name;
 };
 
-PYBIND11_MODULE(example, m) {
+PYBIND11_MODULE(pet1, m) {
     py::class_<Pet>(m, "Pet")
         .def(py::init<const std::string &>())
         .def_readwrite("name", &Pet::name)
