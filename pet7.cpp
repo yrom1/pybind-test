@@ -31,7 +31,7 @@ PYBIND11_MODULE(pet7, m) {
       .value("Cat", Pet::Kind::Cat)
       .export_values();
 
-  py::class_<Pet::Attributes> attributes(pet, "Attributes") // error: expected ';' at end of declaration
+  py::class_<Pet::Attributes>(pet, "Attributes")
       .def(py::init<>())
       .def_readwrite("age", &Pet::Attributes::age);
 }
